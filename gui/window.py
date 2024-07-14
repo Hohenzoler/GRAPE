@@ -1,8 +1,10 @@
 import pygame
+from gui import screens
 
 
 class Window:
     def __init__(self, config):
+        pygame.init()
         self.width = int(config['width'])
         self.height = int(config['height'])
         self.fps = int(config['fps'])
@@ -16,6 +18,8 @@ class Window:
 
         self.run = True
 
+        self.current_screen = screens.Main_menu(self)  # Setting current screen from screens.py file
+
         self.mainloop()
 
     def mainloop(self):
@@ -27,11 +31,15 @@ class Window:
 
     def events(self):
         for event in pygame.event.get():
-            if event.type == pygame.QUIT:  # if event = quit then stop running the application
+            if event.type == pygame.QUIT:  # if event == quit -> stop running the application
                 self.run = False
+            else:
+                self.current_screen.events(event)  # If event != quit -> check events in self.current_screen
 
     def render(self):
         self.screen.fill((26, 26, 26))  # fill the screen the with the color
+
+        self.current_screen.render()  # Rendering the current screen
 
     def update(self):
         pygame.display.update()  # Update the display
