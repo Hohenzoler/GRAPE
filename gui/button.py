@@ -1,7 +1,10 @@
 import pygame
 
 class Button:  # A button class
-    def __init__(self, template, x, y, width, height, color):  # Getting all the parameters of the button
+    def __init__(self, number, template, x, y, width, height, color):  # Getting all the parameters of the button
+
+        self.number = number
+
         self.template = template
 
         self.x = x
