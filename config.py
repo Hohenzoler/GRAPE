@@ -28,7 +28,7 @@ def set_config():  # Function that will create the config file or update it if i
 def generate_default_config_data(version):
     return {
         'version': version,
-        'width': 800,
+        'width': 1200,
         'height': 800,
         'fps': 60
     }

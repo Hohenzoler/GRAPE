@@ -11,7 +11,6 @@ class Custom_text:  # A class that generates text
         self.text = text
         self.text_color = text_color
         self.background_color = background_color
-
         self.center = center
 
         self.font = pygame.font.Font(font, self.font_height)

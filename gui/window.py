@@ -5,20 +5,18 @@ from gui import screens
 class Window:
     def __init__(self, config):
         pygame.init()
-        self.width = int(config['width'])
-        self.height = int(config['height'])
-        self.fps = int(config['fps'])
-        self.version = config['version']
 
-        self.screen = pygame.display.set_mode((self.width, self.height))
+        self.config = config
 
-        pygame.display.set_caption('Grape')  # Set the caption to Grape
+        self.screen_setup()  # Setting the parameters of the screen
 
         self.clock = pygame.time.Clock()
 
         self.run = True
 
-        self.current_screen = screens.Main_menu(self)  # Setting current screen from screens.py file
+        self.screens = {'Main menu': screens.Main_menu(self), 'Settings': screens.Settings(self), 'Selection screen': screens.Selection_screen(self)}  # a dict with all screens
+
+        self.current_screen = self.screens['Main menu']  # Setting current screen from screens.py file
 
         self.mainloop()
 
@@ -43,3 +41,13 @@ class Window:
 
     def update(self):
         pygame.display.update()  # Update the display
+
+    def screen_setup(self):  # Setting the parameters of the screen
+        self.width = int(self.config['width'])
+        self.height = int(self.config['height'])
+        self.fps = int(self.config['fps'])
+        self.version = self.config['version']
+
+        self.screen = pygame.display.set_mode((self.width, self.height))
+
+        pygame.display.set_caption('Grape')  # Set the caption to Grape
