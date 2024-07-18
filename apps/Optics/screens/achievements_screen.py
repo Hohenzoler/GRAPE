@@ -41,7 +41,7 @@ class AchievementsScreen:
 
     def load_achievements(self):
         try:
-            conn = sqlite3.connect('achievements.db')
+            conn = sqlite3.connect('apps/Optics/achievements.db')
             cursor = conn.cursor()
             cursor.execute("SELECT * FROM achievements")
             self.achievements = cursor.fetchall()

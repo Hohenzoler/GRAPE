@@ -10,8 +10,7 @@ class Achievements:
             CREATE TABLE IF NOT EXISTS achievements (
                 achievement_name TEXT PRIMARY KEY,
                 unlocked INTEGER,
-                rarity TEXT
-            )
+                rarity TEXT            )
         """)
         self.conn.commit()
         self.game = game
