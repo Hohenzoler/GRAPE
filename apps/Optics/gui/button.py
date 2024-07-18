@@ -267,12 +267,12 @@ class Button:
                 except:
                     pass
             if self.number == 4:
-                if classes.game.isDrawingModeOn == True:
-                    classes.game.isDrawingModeOn = False
-                    classes.game.polygonDrawing.clearPoints(classes.game.polygonDrawing())
+                if apps.Optics.classes.game.isDrawingModeOn == True:
+                    apps.Optics.classes.game.isDrawingModeOn = False
+                    apps.Optics.classes.game.polygonDrawing.clearPoints(apps.Optics.classes.game.polygonDrawing())
 
-                elif classes.game.isDrawingModeOn == False:
-                    classes.game.isDrawingModeOn = True
+                elif apps.Optics.classes.game.isDrawingModeOn == False:
+                    apps.Optics.classes.game.isDrawingModeOn = True
         if self.rect.collidepoint(mousepos[0], mousepos[1]) and not pygame.mouse.get_pressed()[0]:
             self.show_tooltip()
 

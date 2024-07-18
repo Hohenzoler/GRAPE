@@ -106,7 +106,7 @@ class Game:
 
         obj = gameobjects.Mirror(self, [(1, self.height), (2, self.height), (1, self.height - 1), (1, self.height - 1)], (0, 0, 0, 0), 0.001, 0, 1)
         self.objects.append(obj)
-        print(self.objects)
+        self.quit = False
 
     def create_cursor_particles(self):
         mouse_x, mouse_y = pygame.mouse.get_pos()
@@ -207,10 +207,8 @@ class Game:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 self.save_game()
-                if self.cancel == False:
-                        pygame.quit()
-                        quit()
-
+                self.run = False
+                self.quit = True
 
             if self.mode == 'default':
                 points = polygonDrawing.returnPolygonPoints(self.polygonDrawing)

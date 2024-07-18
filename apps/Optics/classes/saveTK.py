@@ -47,7 +47,7 @@ class Save:
 
         self.root.grid_columnconfigure(0, weight=1)
         self.root.grid_columnconfigure(1, weight=1)
-        self.root.grid_columnconfigure(2, weight=1)
+        # self.root.grid_columnconfigure(2, weight=1)
 
         self.style = Style(theme='solar')
         self.style.master = self.root
@@ -65,13 +65,13 @@ class Save:
             self.entry.insert(0, self.game.save_title)
 
         save_button = tk.Button(self.root, text="Save", command=self.save)
-        save_button.grid(row=2, column=0, sticky='e', padx=1, pady=15)
+        save_button.grid(row=2, column=0, sticky='e', padx=10, pady=15)
 
         dont_save_button = tk.Button(self.root, text="Don't Save", command=self.dont_save)
-        dont_save_button.grid(row=2, column=1, sticky='n', padx=1, pady=15)
+        dont_save_button.grid(row=2, column=1, sticky='w', padx=10, pady=15)
 
-        cancel_save_button = tk.Button(self.root, text="Cancel", command=self.cancel)
-        cancel_save_button.grid(row=2, column=2, sticky='w', padx=1, pady=15)
+        # cancel_save_button = tk.Button(self.root, text="Cancel", command=self.cancel)
+        # cancel_save_button.grid(row=2, column=2, sticky='w', padx=1, pady=15)
 
         self.root.geometry(f'250x150')
 

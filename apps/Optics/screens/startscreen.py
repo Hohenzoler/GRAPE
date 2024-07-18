@@ -119,6 +119,7 @@ class StartScreen:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 self.run = False
+                self.quit = True
 
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 for object in self.objects:

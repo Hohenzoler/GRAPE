@@ -52,4 +52,6 @@ class Window:
 
         pygame.display.set_caption('Grape')  # Set the caption to Grape
 
+        pygame.mixer.init()
+
         pygame.mixer.music.stop()  # Stops the music
