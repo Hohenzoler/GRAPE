@@ -42,8 +42,11 @@ class Button:  # A button class
 
             elif self.action == 'tetris':  # Imports tetris, runs it, when it finishes it rescales the window
                 from apps.Tetris import main
-                main.main()
-                self.template.game.screen_setup()
+                main.main()  # Runs Tetris
+                self.template.game.screen_setup()  # Resets the window size and other stuff
 
             elif self.action == 'optics':
-                print("Optics")
+                from apps.Optics import main  # Imports Optics
+                main.main()  # Runs Optics
+                self.template.game.screen_setup()  # Resets the window size and other stuff
+                pygame.mouse.set_visible(True)  # Makes it so the mouse cursor is visible again

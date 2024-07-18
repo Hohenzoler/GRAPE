@@ -174,7 +174,6 @@ def main():
 
             if event.type == pygame.QUIT:
                 run = False
-                pygame.mixer.quit()
 
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 if event.button == 1:

@@ -44,6 +44,9 @@ class Selection_screen(Template):  # The screen that actually shows you what app
         button.Button(self, 'optics', 135, 45, 75, 75, 'white', None, 'img/optics.png')  # A button that starts optics
         custom_text.Custom_text(self, 172.5, 145, None, 25, 'Optics', text_color='white')  # A text that says optics
 
+        button.Button(self, 'main-menu', self.game.width // 2 - 150, self.game.height // 1.3, 300, 100, 'white',
+                      'Back')  # A button that takes you back to the main menu
+
     def render(self):  # Rendering all objects in the class + additional stuff
 
         pygame.draw.rect(self.screen, (100, 100, 100), (20, 20, self.game.width-40, self.game.height - 40), border_radius=5)  # the lighter grey background
